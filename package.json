@@ -7,8 +7,7 @@
     "build": "ng build --configuration production --base-href=/TesourarIA/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "npm run build && npm run prepare-deploy && ng deploy --base-href=/TesourarIA/ --name='TesourarIA' --email='noreply@github.com'",
-    "prepare-deploy": "node -e \"const fs=require('fs'); const path=require('path'); const browserDir='dist/cashlog-dashboard/browser'; const distDir='dist/cashlog-dashboard'; if(fs.existsSync(browserDir)) { const files=fs.readdirSync(browserDir, {withFileTypes: true}); files.forEach(file=>{ const src=path.join(browserDir, file.name); const dest=path.join(distDir, file.name); if(file.isDirectory()) { if(!fs.existsSync(dest)) fs.mkdirSync(dest, {recursive: true}); fs.readdirSync(src).forEach(f=>{ fs.copyFileSync(path.join(src, f), path.join(dest, f)); }); } else { fs.copyFileSync(src, dest); } }); const indexPath=path.join(distDir, 'index.html'); const dest404=path.join(distDir, '404.html'); if(fs.existsSync(indexPath)) { fs.copyFileSync(indexPath, dest404); console.log('Files copied from browser/ to root and 404.html created'); } }\" || true",
+    "deploy": "npm run build && ng deploy --base-href=/TesourarIA/ --name='TesourarIA' --email='noreply@github.com'",
     "clean": "node -e \"const {execSync}=require('child_process'); try{execSync('git worktree remove gh-pages',{stdio:'ignore'});}catch(e){}\ntry{execSync('git branch -D gh-pages',{stdio:'ignore'});}catch(e){}\" || exit 0"
   },
   "private": true,

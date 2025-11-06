@@ -28,12 +28,19 @@ jobs:
       - name: Build app
         run: npm run build
 
-      - name: Prepare deploy files
-        run: npm run prepare-deploy
+      - name: Verify build output
+        run: |
+          if [ -f "dist/cashlog-dashboard/browser/index.html" ]; then
+            echo "✅ Build output exists in browser/"
+            ls -lh dist/cashlog-dashboard/browser/index.html
+          else
+            echo "❌ Build output NOT FOUND!"
+            exit 1
+          fi
 
       - name: Deploy to GitHub Pages
         run: |
-          npx angular-cli-ghpages --dir=dist/cashlog-dashboard --base-href=/TesourarIA/ --no-silent
+          npx angular-cli-ghpages --dir=dist/cashlog-dashboard/browser --base-href=/TesourarIA/ --no-silent
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

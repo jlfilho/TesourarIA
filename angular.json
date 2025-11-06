@@ -74,7 +74,8 @@
           "builder": "angular-cli-ghpages:deploy",
           "options": {
             "baseHref": "/TesourarIA/",
-            "dir": "dist/cashlog-dashboard"
+            "dir": "dist/cashlog-dashboard/browser",
+            "notfound": true
           }
         }
       }
