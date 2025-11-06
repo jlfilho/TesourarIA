@@ -7,7 +7,7 @@
     "build": "ng build --configuration production --base-href=/TesourarIA/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "npm run build && ng deploy --base-href=/TesourarIA/ --name='TesourarIA' --email='noreply@github.com'",
+    "deploy": "ng deploy --base-href=/TesourarIA/ --name='TesourarIA' --email='noreply@github.com'",
     "clean": "node -e \"const {execSync}=require('child_process'); try{execSync('git worktree remove gh-pages',{stdio:'ignore'});}catch(e){}\ntry{execSync('git branch -D gh-pages',{stdio:'ignore'});}catch(e){}\" || exit 0"
   },
   "private": true,
