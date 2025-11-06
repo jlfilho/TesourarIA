@@ -1,0 +1,68 @@
+<div class="costs-page">
+  <h1 class="page-title">Custos</h1>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Custos dos Últimos 7 Dias</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <table mat-table [dataSource]="costs" class="costs-table">
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef>Data</th>
+          <td mat-cell *matCellDef="let cost">{{ formatDate(cost.date) }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="transportCost">
+          <th mat-header-cell *matHeaderCellDef>Custo de Transporte</th>
+          <td mat-cell *matCellDef="let cost">{{ formatCurrency(cost.transportCost) }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="fixedCost">
+          <th mat-header-cell *matHeaderCellDef>Custo Fixo</th>
+          <td mat-cell *matCellDef="let cost">{{ formatCurrency(cost.fixedCost) }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="variableCost">
+          <th mat-header-cell *matHeaderCellDef>Custo Variável</th>
+          <td mat-cell *matCellDef="let cost">{{ formatCurrency(cost.variableCost) }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="total">
+          <th mat-header-cell *matHeaderCellDef>Total</th>
+          <td mat-cell *matCellDef="let cost">{{ formatCurrency(getTotalCost(cost)) }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="breakdown-card">
+    <mat-card-header>
+      <mat-card-title>Breakdown de Custos</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="breakdown-content">
+        <div class="breakdown-item">
+          <span class="label">Custo Fixo:</span>
+          <span class="value">{{ formatCurrency(totalFixed) }}</span>
+          <span class="percentage">({{ getFixedPercentage().toFixed(1) }}%)</span>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="breakdown-item">
+          <span class="label">Custo Variável:</span>
+          <span class="value">{{ formatCurrency(totalVariable) }}</span>
+          <span class="percentage">({{ getVariablePercentage().toFixed(1) }}%)</span>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="breakdown-item total">
+          <span class="label">Total (Fixos + Variáveis):</span>
+          <span class="value">{{ formatCurrency(totalFixed + totalVariable) }}</span>
+        </div>
+      </div>
+      <!-- TODO: Integrar gráfico de pizza para visualização de breakdown -->
+    </mat-card-content>
+  </mat-card>
+</div>
+

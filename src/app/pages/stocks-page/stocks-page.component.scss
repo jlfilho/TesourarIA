@@ -1,0 +1,50 @@
+.stocks-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .page-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+  }
+
+  mat-card {
+    mat-card-content {
+      padding: 1.5rem;
+    }
+
+    .stocks-table {
+      width: 100%;
+
+      .level-ok {
+        color: #4caf50;
+        font-weight: 500;
+      }
+
+      .level-atencao {
+        color: #ff9800;
+        font-weight: 500;
+      }
+
+      .level-critico {
+        color: #f44336;
+        font-weight: 500;
+      }
+
+      tr.row-ok {
+        background-color: rgba(76, 175, 80, 0.05);
+      }
+
+      tr.row-atencao {
+        background-color: rgba(255, 152, 0, 0.05);
+      }
+
+      tr.row-critico {
+        background-color: rgba(244, 67, 54, 0.05);
+      }
+    }
+  }
+}
+

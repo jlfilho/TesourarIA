@@ -1,0 +1,39 @@
+<div class="routes-map-container">
+  <mat-card class="map-header">
+    <div class="header-content">
+      <mat-form-field appearance="outline" class="route-select">
+        <mat-label>{{ routesData.length > 0 ? 'Selecione a rota' : 'Carregando rotas...' }}</mat-label>
+        <mat-select [value]="selectedRouteId" (selectionChange)="onSelectionChange($event)" [disabled]="routesData.length === 0">
+          <mat-option *ngFor="let route of routesData" [value]="route.vehicleId">
+            {{ route.vehicleName }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="route-info" *ngIf="activeRoute">
+        <span class="info-item">
+          <mat-icon>straighten</mat-icon>
+          <strong>Distância:</strong> {{ activeRoute.distanceKm }} km
+        </span>
+        <span class="info-item">
+          <mat-icon>attach_money</mat-icon>
+          <strong>Custo:</strong> {{ formatCurrency(activeRoute.cost) }}
+        </span>
+        <span class="info-item">
+          <mat-icon>location_on</mat-icon>
+          <strong>Paradas:</strong> {{ activeRoute.stops.length }}
+        </span>
+      </div>
+    </div>
+  </mat-card>
+
+  <div
+    class="leaflet-map"
+    style="height: 70vh; width: 100%;"
+    leaflet
+    [leafletOptions]="options"
+    [leafletLayers]="layers"
+    (leafletMapReady)="onMapReady($event)">
+  </div>
+</div>
+

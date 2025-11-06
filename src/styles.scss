@@ -1,0 +1,66 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import "leaflet/dist/leaflet.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Fix para ícones do Leaflet no Angular
+// Os ícones padrão do Leaflet são carregados automaticamente
+// Mas se houver problemas, descomente e ajuste os caminhos abaixo
+
+.leaflet-container {
+  // Garante que os controles de zoom funcionem
+  .leaflet-control-zoom {
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+  
+  .leaflet-control-zoom-in,
+  .leaflet-control-zoom-out {
+    background-color: white;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    
+    &:hover {
+      background-color: #f4f4f4;
+    }
+  }
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #f3f4f6;
+  margin: 0;
+}
+
+// Override para cores customizadas (azul + cinza)
+.mat-primary {
+  --mat-toolbar-container-background-color: #1976d2;
+  --mat-sidenav-container-background-color: #263238;
+}
+
+.mat-toolbar {
+  background-color: #1976d2 !important;
+  color: white !important;
+}
+
+.mat-sidenav {
+  background-color: #263238 !important;
+  color: white !important;
+}
+
+.mat-raised-button.mat-primary {
+  background-color: #1976d2;
+}
+
+.mat-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}

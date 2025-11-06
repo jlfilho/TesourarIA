@@ -1,0 +1,54 @@
+.deliveries-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .page-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+  }
+
+  mat-card {
+    mat-card-content {
+      padding: 1.5rem;
+    }
+
+    .filters {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      align-items: center;
+
+      mat-form-field {
+        flex: 1;
+        max-width: 300px;
+      }
+
+      .export-btn {
+        margin-left: auto;
+      }
+    }
+
+    .deliveries-table {
+      width: 100%;
+
+      .status-planejada {
+        color: #2196f3;
+        font-weight: 500;
+      }
+
+      .status-em_rota {
+        color: #ff9800;
+        font-weight: 500;
+      }
+
+      .status-concluida {
+        color: #4caf50;
+        font-weight: 500;
+      }
+    }
+  }
+}
+

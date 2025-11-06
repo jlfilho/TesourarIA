@@ -1,0 +1,52 @@
+.routes-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .page-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+  }
+
+  mat-card {
+    mat-card-content {
+      padding: 1.5rem;
+    }
+
+    .routes-table {
+      width: 100%;
+    }
+
+    &.map-card {
+      margin-top: 1rem;
+    }
+
+    .routes-visualization {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      .route-item {
+        padding: 1rem;
+        background-color: #f5f5f5;
+        border-radius: 8px;
+
+        h3 {
+          margin: 0 0 0.5rem 0;
+          color: #1976d2;
+        }
+
+        .route-chips {
+          mat-chip-set {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
