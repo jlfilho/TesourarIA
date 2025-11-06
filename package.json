@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "deploy": "npm run build && npm run copy-404 && ng deploy --base-href=/TesourarIA/ --name='TesourarIA' --email='noreply@github.com'",
-    "copy-404": "node -e \"const fs=require('fs'); const path=require('path'); const src='404.html'; const dest='dist/cashlog-dashboard/404.html'; if(fs.existsSync(src)) { fs.mkdirSync(path.dirname(dest), {recursive: true}); fs.copyFileSync(src, dest); console.log('404.html copied successfully'); } else { console.warn('404.html not found'); }\" || true",
+    "copy-404": "node -e \"const fs=require('fs'); const path=require('path'); const indexPath='dist/cashlog-dashboard/browser/index.html'; const dest404='dist/cashlog-dashboard/404.html'; if(fs.existsSync(indexPath)) { const indexContent=fs.readFileSync(indexPath, 'utf8'); fs.writeFileSync(dest404, indexContent); console.log('404.html created from index.html'); } else { console.warn('index.html not found at', indexPath); }\" || true",
     "clean": "git worktree remove gh-pages && git branch -D gh-pages || true"
   },
   "private": true,
