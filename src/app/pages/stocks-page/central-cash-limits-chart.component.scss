@@ -1,0 +1,43 @@
+.chart-card {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+}
+
+mat-card-title {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+mat-card-subtitle {
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+::ng-deep ngx-charts-line-chart {
+  font-family: "Roboto", sans-serif;
+}
+
+.alerts {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.low {
+  color: #b91c1c;
+  background: #fee2e2;
+  border-radius: 4px;
+  padding: 8px 12px;
+  border-left: 3px solid #dc2626;
+}
+
+.high {
+  color: #166534;
+  background: #dcfce7;
+  border-radius: 4px;
+  padding: 8px 12px;
+  border-left: 3px solid #16a34a;
+}
+

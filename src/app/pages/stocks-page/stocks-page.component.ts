@@ -6,6 +6,8 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { DashboardService } from '../../core/services/dashboard.service';
 import { StockRisk } from '../../core/models/stock-risk.model';
 import { CoverageHeatmapComponent } from './coverage-heatmap.component';
+import { CentralCashLimitsChartComponent } from './central-cash-limits-chart.component';
+import { AgencyCashLimitsChartComponent } from './agency-cash-limits-chart.component';
 
 @Component({
   selector: 'app-stocks-page',
@@ -15,7 +17,9 @@ import { CoverageHeatmapComponent } from './coverage-heatmap.component';
     MatCardModule,
     MatTableModule,
     MatBadgeModule,
-    CoverageHeatmapComponent
+    CoverageHeatmapComponent,
+    CentralCashLimitsChartComponent,
+    AgencyCashLimitsChartComponent
   ],
   templateUrl: './stocks-page.component.html',
   styleUrls: ['./stocks-page.component.scss']
