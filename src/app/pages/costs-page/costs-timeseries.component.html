@@ -1,0 +1,27 @@
+<mat-card class="chart-card">
+  <mat-card-header>
+    <mat-card-title>Série Temporal de Custos Diários</mat-card-title>
+    <mat-card-subtitle>
+      Comparativo entre custo total, fixo e variável
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <ngx-charts-line-chart
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="chartData"
+      [xAxis]="true"
+      [yAxis]="true"
+      [legend]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxisLabel]="'Data'"
+      [yAxisLabel]="'Custo (R$)'"
+      [autoScale]="true"
+      [animations]="true"
+      [timeline]="true"
+      [gradient]="false">
+    </ngx-charts-line-chart>
+  </mat-card-content>
+</mat-card>
+

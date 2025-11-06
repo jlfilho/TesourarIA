@@ -1,0 +1,25 @@
+<mat-card class="chart-card">
+  <mat-card-header>
+    <mat-card-title>Volume Transportado por Veículo</mat-card-title>
+    <mat-card-subtitle>
+      Comparação entre veículos e dias (barras empilhadas)
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <ngx-charts-bar-vertical-stacked
+      [view]="view"
+      [results]="chartData"
+      [scheme]="colorScheme"
+      [xAxis]="true"
+      [yAxis]="true"
+      [legend]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxisLabel]="'Veículos'"
+      [yAxisLabel]="'Volume transportado (R$)'"
+      [roundDomains]="true"
+      [animations]="true">
+    </ngx-charts-bar-vertical-stacked>
+  </mat-card-content>
+</mat-card>
+

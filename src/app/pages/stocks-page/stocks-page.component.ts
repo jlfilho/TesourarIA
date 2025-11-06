@@ -5,6 +5,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatBadgeModule } from '@angular/material/badge';
 import { DashboardService } from '../../core/services/dashboard.service';
 import { StockRisk } from '../../core/models/stock-risk.model';
+import { CoverageHeatmapComponent } from './coverage-heatmap.component';
 
 @Component({
   selector: 'app-stocks-page',
@@ -13,7 +14,8 @@ import { StockRisk } from '../../core/models/stock-risk.model';
     CommonModule,
     MatCardModule,
     MatTableModule,
-    MatBadgeModule
+    MatBadgeModule,
+    CoverageHeatmapComponent
   ],
   templateUrl: './stocks-page.component.html',
   styleUrls: ['./stocks-page.component.scss']

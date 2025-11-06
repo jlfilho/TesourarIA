@@ -6,6 +6,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { DashboardService } from '../../core/services/dashboard.service';
 import { RoutePlan } from '../../core/models/route-plan.model';
 import { RoutesMapLeafletComponent } from './routes-map-leaflet.component';
+import { VehicleVolumeStackedComponent } from './vehicle-volume-stacked.component';
 
 @Component({
   selector: 'app-routes-page',
@@ -15,7 +16,8 @@ import { RoutesMapLeafletComponent } from './routes-map-leaflet.component';
     MatCardModule,
     MatTableModule,
     MatChipsModule,
-    RoutesMapLeafletComponent
+    RoutesMapLeafletComponent,
+    VehicleVolumeStackedComponent
   ],
   templateUrl: './routes-page.component.html',
   styleUrls: ['./routes-page.component.scss']

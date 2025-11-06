@@ -1,0 +1,49 @@
+.heatmap-card {
+  margin-bottom: 1.5rem;
+}
+
+.heatmap {
+  display: grid;
+  grid-template-columns: 180px repeat(7, 1fr);
+  gap: 4px;
+  margin-top: 1rem;
+  align-items: stretch;
+}
+
+.day-header {
+  font-weight: 600;
+  text-align: center;
+  background: #e5e7eb;
+  padding: 6px 0;
+  border-radius: 4px;
+}
+
+.agency-cell {
+  background: #f3f4f6;
+  padding: 6px 8px;
+  font-weight: 500;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.heat-cell {
+  min-height: 38px;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 38px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.corner {
+  /* célula vazia no topo esquerdo */
+}
+

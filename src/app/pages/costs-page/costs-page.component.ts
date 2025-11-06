@@ -5,6 +5,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDividerModule } from '@angular/material/divider';
 import { DashboardService } from '../../core/services/dashboard.service';
 import { CostSummary } from '../../core/models/cost-summary.model';
+import { CostsTimeseriesComponent } from './costs-timeseries.component';
+import { CostDistributionDonutComponent } from './cost-distribution-donut.component';
 
 @Component({
   selector: 'app-costs-page',
@@ -13,7 +15,9 @@ import { CostSummary } from '../../core/models/cost-summary.model';
     CommonModule,
     MatCardModule,
     MatTableModule,
-    MatDividerModule
+    MatDividerModule,
+    CostsTimeseriesComponent,
+    CostDistributionDonutComponent
   ],
   templateUrl: './costs-page.component.html',
   styleUrls: ['./costs-page.component.scss']

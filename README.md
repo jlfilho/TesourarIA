@@ -60,11 +60,47 @@ ng serve
 - SCSS
 - RxJS
 
+## 🚀 Deploy no GitHub Pages
+
+O projeto está configurado para deploy automático no GitHub Pages.
+
+### Deploy Manual
+
+Para fazer o deploy manualmente:
+
+```bash
+npm run deploy
+```
+
+Este comando irá:
+1. Compilar o projeto em modo produção
+2. Criar/atualizar a branch `gh-pages`
+3. Publicar o app em: https://jlfilho.github.io/TesourarIA/
+
+### Deploy Automático (GitHub Actions)
+
+O deploy automático é acionado quando há push na branch `main`. O workflow:
+- Faz checkout do código
+- Instala as dependências
+- Compila o projeto
+- Faz deploy para o GitHub Pages
+
+**Status do Deploy:** ![Deploy Status](https://github.com/jlfilho/TesourarIA/workflows/Deploy%20Angular%20App%20to%20GitHub%20Pages/badge.svg)
+
+### Limpeza
+
+Para limpar a branch gh-pages local (se necessário):
+
+```bash
+npm run clean
+```
+
 ## Próximos passos (TODOs)
 
 - [x] Integrar gráficos com Chart.js
+- [x] Deploy automático no GitHub Pages
 - [ ] Implementar exportação CSV
-- [ ] Integrar mapa de rotas (Leaflet/Google Maps)
+- [x] Integrar mapa de rotas (Leaflet/OpenStreetMap)
 - [x] Adicionar gráfico de pizza para breakdown de custos
 - [ ] Implementar filtros de data funcionais
 - [ ] Conectar com API real
